@@ -13,7 +13,9 @@ app.set("/views", "./views")//thu muc chua "trangchu"
 let server = require("http").Server(app);
 //khai bao socket
 var io = require("socket.io")(server)
-server.listen(3000);
+server.listen(process.env.PORT || 3000, ()=>{
+    console.log('listening on port 3000')
+})
 //lang nghe co nguoi ket noi len server
 let mangUser = [];
 let mangnguoichoi = [];
